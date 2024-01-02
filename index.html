@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(to bottom, #71cd6a, #5CA9E9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            background-color: white;
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0 0 20px;
+            color: #5CA9E9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            text-align: left;
+        }
+        input[type=text],
+        input[type=password] {
+            width: calc(100% - 22px);
+            padding: 8px 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: none;
+            background-color: #5CA9E9;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type=button]:hover {
+            background-color: #4b8ec2;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>Registration Form</h1>
+        <form id="myForm">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+            <span id="usernameError" class="error"></span>
+
+            <label for="email">Email Address</label>
+            <input type="text" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+
+            <label for="password">Password</label>
+            <input type="password" id="myInput" required>
+            <span id="passwordError" class="error"></span>
+            <br>
+            <input type="checkbox" onclick="myFunction()">Show Password
+
+            <input type="button" value="Submit" id="button" name="button" onclick="validateForm()">
+        </form>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myInput");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("myInput").value;
+
+            // Reset error messages
+            document.getElementById("usernameError").innerText = "";
+            document.getElementById("emailError").innerText = "";
+            document.getElementById("passwordError").innerText = "";
+
+            var isValid = true;
+
+            // Validate username
+            if (username.trim() === "") {
+                document.getElementById("usernameError").innerText = "Please enter a username";
+                isValid = false;
+            }
+
+            // Validate email
+            if (email.trim() === "") {
+                document.getElementById("emailError").innerText = "Please enter an email address";
+                isValid = false;
+            }
+
+            // Validate password
+            if (password.trim() === "") {
+                document.getElementById("passwordError").innerText = "Please enter a password";
+                isValid = false;
+            }
+
+            // If all fields are filled, submit the form
+            if (isValid) {
+                alert("Form submitted successfully!");
+                document.getElementById("myForm").submit();
+            }
+        }
+    </script>
+</body>
+</html>
