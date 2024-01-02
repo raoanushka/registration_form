@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <style>
-        /* General styles */
+      
         body {
             margin: 0;
             min-height: 100vh;
@@ -18,15 +18,15 @@
 
         .box {
             background-color: white;
-            width: 80%; /* Adjust the width as needed */
-            max-width: 400px; /* Set a maximum width */
+            width: 80%; 
+            max-width: 400px; 
             padding: 20px;
             text-align: center;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Form input styles */
+      
         label {
             display: block;
             margin-bottom: 8px;
@@ -65,14 +65,14 @@
             margin-top: -10px;
         }
 
-        /* Media query for responsiveness */
-        @media (max-width: 480px) {
+     
+        @media (max-width: 380px) {
             .box {
-                width: 90%; /* Adjust width for smaller screens */
-                padding: 10px; /* Reduce padding for smaller screens */
+                width: 90%;
+                padding: 10px;
             }
             input[type=button] {
-                margin-bottom: 20px; /* Increase button margin for smaller screens */
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -114,32 +114,29 @@
             var email = document.getElementById("email").value;
             var password = document.getElementById("myInput").value;
 
-            // Reset error messages
+          
             document.getElementById("usernameError").innerText = "";
             document.getElementById("emailError").innerText = "";
             document.getElementById("passwordError").innerText = "";
 
             var isValid = true;
 
-            // Validate username
             if (username.trim() === "") {
                 document.getElementById("usernameError").innerText = "Please enter a username";
                 isValid = false;
             }
 
-            // Validate email
+        
             if (email.trim() === "") {
                 document.getElementById("emailError").innerText = "Please enter an email address";
                 isValid = false;
             }
-
-            // Validate password
-            if (password.trim() === "") {
+        if (password.trim() === "") {
                 document.getElementById("passwordError").innerText = "Please enter a password";
                 isValid = false;
             }
 
-            // If all fields are filled, submit the form
+       
             if (isValid) {
                 alert("Form submitted successfully!");
                 document.getElementById("myForm").submit();
