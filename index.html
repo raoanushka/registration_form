@@ -5,32 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Form</title>
     <style>
-        
+        /* General styles */
         body {
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(to bottom, #71cd6a, #5CA9E9);
             display: flex;
             justify-content: center;
             align-items: center;
+            font-family: Arial, sans-serif;
         }
+
         .box {
             background-color: white;
-            width: 400px;
+            width: 80%; /* Adjust the width as needed */
+            max-width: 400px; /* Set a maximum width */
             padding: 20px;
             text-align: center;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            margin: 0 0 20px;
-            color: #5CA9E9;
-        }
+
+        /* Form input styles */
         label {
             display: block;
             margin-bottom: 8px;
             text-align: left;
         }
+
         input[type=text],
         input[type=password] {
             width: calc(100% - 22px);
@@ -40,6 +42,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
         }
+
         input[type=button] {
             width: 100%;
             padding: 10px;
@@ -51,18 +54,27 @@
             cursor: pointer;
             border-radius: 4px;
         }
+
         input[type=button]:hover {
             background-color: #4b8ec2;
         }
+
         .error {
             color: red;
             font-size: 14px;
             margin-top: -10px;
         }
-        @media (max-width: 768px) {
+
+        /* Media query for responsiveness */
+        @media (max-width: 480px) {
             .box {
                 width: 90%; /* Adjust width for smaller screens */
-            }}
+                padding: 10px; /* Reduce padding for smaller screens */
+            }
+            input[type=button] {
+                margin-bottom: 20px; /* Increase button margin for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
